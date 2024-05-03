@@ -1,0 +1,20 @@
+{
+  "name": "@webnn/types",
+  "version": "0.1.0",
+  "description": "TypeScript types for WebNN",
+  "main": "",
+  "types": "webnn/index.d.ts",
+  "files": [
+    "webnn/**/*"
+  ],
+  "scripts": {
+    "extract-idl": "node scripts/extract-idl.mjs spec/index.bs generated/webnn.idl",
+    "generate-types": "webidl-dts-gen -i generated/webnn.idl -o generated/index.d.ts",
+    "generate": "npm run extract-idl && npm run generate-types"
+  },
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "node-html-parser": "^6.1.13",
+    "webidl-dts-gen": "^1.11.0"
+  }
+}
